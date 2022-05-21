@@ -8,3 +8,5 @@
 ```Пример: пусть N = 4, тогда [ 1, 2, 6, 24 ]```
 
 4. Подсчитать сумму цифр в вещественном числе.
+
+[решение](https://github.com/BigBadMuttuH/GB-python-homewok/blob/main/hw001.py)
