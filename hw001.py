@@ -65,20 +65,20 @@ def write_in_morse(st: str):
 
 # print("Задача 1")
 # print(get_cubs(5))
-#
+# 
 # print("Задача 2")
 # str1 = input("введите 1 строку: ")
 # str2 = input("введите 2 строку: ")
 # count = get_numbers_of_occurrence(str1, str2)
 # print(count)
-#
+# #
 # print("Задача 3")
 # print(factorial(4))
 # print(factorial(5))
-
+# 
 # print("Задача 4")
 # print(get_summ_of_numbers(1.5))
-
-print("Задача 5")
-st = input('введите сроку на английском: ')
-print(write_in_morse(st))
+#  
+# print("Задача 5")
+# st = input('введите сроку на английском: ')
+# print(write_in_morse(st))
