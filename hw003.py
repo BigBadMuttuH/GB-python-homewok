@@ -1,5 +1,6 @@
-# Найти НОК двух чисел
 import math
+
+# 1. Найти НОК двух чисел
 # Класический варинат нахождения НОК
 def get_least_common_multiple(a, b):
     if a == 0 or b == 0: return 0
@@ -12,6 +13,7 @@ def get_least_common_multiple(a, b):
         lcm += 1
     return lcm
 
+# 1. Найти НОК двух чисел
 # Варинат чере math.gcd() находим общий делитель
 # далее по формуле lcm(a, b) = (a * b) // math.gcd(a, b)
 def glcm_math(a, b):
@@ -20,3 +22,5 @@ def glcm_math(a, b):
 a, b = map(int, input("Введите два числа (через пробел): ").strip().split())
 print(f"НОК числел {a=} и {b=} = {get_least_common_multiple(a, b)}")
 print(f"НОК числел {a=} и {b=} = {glcm_math(a, b)}")
+
+
