@@ -26,8 +26,9 @@ print(f"НОК чисел {a=} и {b=} = {glcm_math(a, b)}\n")
 
 # 2. Вычислить число Пи c заданной точностью d
 # Пример: при d = 0.001,  c= 3.141.
-def get_PI(num: int):
+def get_PI(d):
+    num = len("".join(str(d).split(".")[1]))
     return "{:1.{poins}f}".format(math.pi, poins=num)
 
-d = int(input("Введите точность для PI: "))
-print(get_PI(d))
+a = input("Введите точность для PI (пример 0.001): ")
+print(get_PI(a))
