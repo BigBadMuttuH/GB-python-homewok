@@ -21,6 +21,13 @@ def glcm_math(a, b):
 
 a, b = map(int, input("Введите два числа (через пробел): ").strip().split())
 print(f"НОК числел {a=} и {b=} = {get_least_common_multiple(a, b)}")
-print(f"НОК числел {a=} и {b=} = {glcm_math(a, b)}")
+print(f"НОК числел {a=} и {b=} = {glcm_math(a, b)}\n")
 
 
+# 2. Вычислить число Пи c заданной точностью d
+# Пример: при d = 0.001,  c= 3.141.
+def get_PI_decimal_poin(num: int):
+    return "{:1.{poins}f}".format(math.pi, poins=num)
+
+d = int(input("Введите точность для PI: "))
+print(get_PI_decimal_poin(d))
