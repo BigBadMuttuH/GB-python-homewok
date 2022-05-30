@@ -47,3 +47,5 @@ char_to_dots = {
 
 - на тему файловой системы:
 5.  Дан текстовый файл, содержащий целые числа. Удалить из него все четные числа. 
+
+[решение](https://github.com/BigBadMuttuH/GB-python-homewok/blob/main/hw003.py)
