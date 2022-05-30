@@ -1,7 +1,7 @@
 import math
 
 # 1. Найти НОК двух чисел
-# Класический варинат нахождения НОК
+# Классический вариант нахождения НОК
 def get_least_common_multiple(a, b):
     if a == 0 or b == 0: return 0
     lcm = min(a, b)
@@ -14,20 +14,20 @@ def get_least_common_multiple(a, b):
     return lcm
 
 # 1. Найти НОК двух чисел
-# Варинат чере math.gcd() находим общий делитель
+# Вариант через math.gcd() находим общий делитель
 # далее по формуле lcm(a, b) = (a * b) // math.gcd(a, b)
 def glcm_math(a, b):
     return ((a * b) // math.gcd(a, b))
 
 a, b = map(int, input("Введите два числа (через пробел): ").strip().split())
-print(f"НОК числел {a=} и {b=} = {get_least_common_multiple(a, b)}")
-print(f"НОК числел {a=} и {b=} = {glcm_math(a, b)}\n")
+print(f"НОК чисел {a=} и {b=} = {get_least_common_multiple(a, b)}")
+print(f"НОК чисел {a=} и {b=} = {glcm_math(a, b)}\n")
 
 
 # 2. Вычислить число Пи c заданной точностью d
 # Пример: при d = 0.001,  c= 3.141.
-def get_PI_decimal_poin(num: int):
+def get_PI(num: int):
     return "{:1.{poins}f}".format(math.pi, poins=num)
 
 d = int(input("Введите точность для PI: "))
-print(get_PI_decimal_poin(d))
+print(get_PI(d))
