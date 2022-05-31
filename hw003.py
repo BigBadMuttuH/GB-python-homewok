@@ -1,5 +1,5 @@
 import math
-
+from random import randint
 
 # 1. Найти НОК двух чисел
 # Классический вариант нахождения НОК
@@ -23,9 +23,9 @@ def glcm_math(a, b):
     return ((a * b) // math.gcd(a, b))
 
 
-a, b = map(int, input("Введите два числа (через пробел): ").strip().split())
-print(f"НОК чисел {a=} и {b=} = {get_least_common_multiple(a, b)}")
-print(f"НОК чисел {a=} и {b=} = {glcm_math(a, b)}\n")
+# a, b = map(int, input("Введите два числа (через пробел): ").strip().split())
+# print(f"НОК чисел {a=} и {b=} = {get_least_common_multiple(a, b)}")
+# print(f"НОК чисел {a=} и {b=} = {glcm_math(a, b)}\n")
 
 
 # 2. Вычислить число Пи c заданной точностью d
@@ -43,5 +43,21 @@ def get_PI(d):
     return "{:1.{poins}f}".format(sum, poins=int(d))
 
 
-a = input("Введите точность для PI: ")
-print(get_PI(a))
+# a = input("Введите точность для PI(количество знаков после запятой): ")
+# print(get_PI(a))
+
+# Составить список простых множителей натурального числа N
+def get_simple_multipliers(num):
+    return [i for i in range(1, num + 1) if num % i == 0]
+
+# n = int(input("число: "))
+# print(get_simple_multipliers(n))
+
+
+
+# 4. Дана последовательность чисел.
+# Получить список неповторяющихся элементов исходной последовательности
+# Пример: [1, 2, 3, 5, 1, 5, 3, 10] => [1, 2, 3, 5, 10]
+random_list = [randint(1,10) for i in range(1, 21)]
+print(random_list)
+
