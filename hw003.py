@@ -1,6 +1,7 @@
 import math
 from random import randint
 
+
 # 1. Найти НОК двух чисел
 # Классический вариант нахождения НОК
 def get_least_common_multiple(a, b):
@@ -54,10 +55,16 @@ def get_simple_multipliers(num):
 # print(get_simple_multipliers(n))
 
 
-
 # 4. Дана последовательность чисел.
 # Получить список неповторяющихся элементов исходной последовательности
 # Пример: [1, 2, 3, 5, 1, 5, 3, 10] => [1, 2, 3, 5, 10]
-random_list = [randint(1,10) for i in range(1, 21)]
-print(random_list)
+def get_unique_list(nlist: list):
+    return list(set(nlist))
 
+
+random_list = [randint(1, 10) for i in range(1, 21)]
+# print(random_list)
+# print(get_unique_list(random_list))
+
+# 5. Дан текстовый файл, содержащий целые числа.
+# Удалить из него все четные числа.
