@@ -2,9 +2,14 @@ import math
 from random import randint
 
 
-# 1. Найти НОК двух чисел
-# Классический вариант нахождения НОК
 def get_least_common_multiple(a, b):
+    """
+    Найти НОК двух чисел,
+    классический вариант решения
+    DOCSTRING: get least common multiple of tow numbers
+    INPUT: tow numbers a, b
+    OUTPUT: common multiple of tow numbers
+    """
     if a == 0 or b == 0:
         return 0
     lcm = min(a, b)
@@ -17,10 +22,15 @@ def get_least_common_multiple(a, b):
     return lcm
 
 
-# 1. Найти НОК двух чисел
-# Вариант через math.gcd() находим общий делитель
-# далее по формуле lcm(a, b) = (a * b) // math.gcd(a, b)
 def glcm_math(a, b):
+    """
+    Найти НОК двух чисел
+    Вариант через math.gcd() находим общий делитель
+    далее по формуле lcm(a, b) = (a * b) // math.gcd(a, b)
+    DOCSTRING: get least common multiple of tow numbers
+    INPUT: tow numbers a, b
+    OUTPUT: common multiple of tow numbers
+    """
     return ((a * b) // math.gcd(a, b))
 
 
