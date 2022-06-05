@@ -59,7 +59,7 @@ char_to_dots = {
 [1, 5, 2, 3, 4, 6, 1, 7] => [1, 2, 3, 4, 6, 7]
 [5, 2, 3, 4, 6, 1, 7] => [2, 3, 4, 6, 7]
 ```
-[решение](https://github.com/BigBadMuttuH/GB-python-homewok/blob/main/hw004_sorting.py)
-[решение](https://github.com/BigBadMuttuH/GB-python-homewok/blob/main/hw004_sequence.py)
+[решение сортировки](https://github.com/BigBadMuttuH/GB-python-homewok/blob/main/hw004_sorting.py)
+[решение последовательности](https://github.com/BigBadMuttuH/GB-python-homewok/blob/main/hw004_sequence.py)
 
 ### ДЗ № 5
