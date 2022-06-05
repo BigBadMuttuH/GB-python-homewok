@@ -1,5 +1,4 @@
 import math
-import numbers
 from random import randint
 
 
@@ -106,7 +105,7 @@ def create_file(count: int):
 def remove_even_numbers_from_file(file_name: str):
     """
     Удалить из него все четные числа.
-    :param file:
+    :param file name
     :return: numbers.txt
     """
     numbers = []
