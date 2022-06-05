@@ -19,7 +19,8 @@ def measure_time(func, currently_evaluating=set()):
             finally:
                 currently_evaluating.remove(func)
             end_timer = timer()
-            print(f"Function {func.__name__} took {end_timer - start_timer} for execution")
+            print(f"Function {func.__name__}"
+                  f"took {end_timer - start_timer} for execution")
             return result
 
     return inner
@@ -77,7 +78,8 @@ def smart_bubble_sort(list_of_data: list):
         for i in range(0, len(list_of_data) - iterations - 1):
             if list_of_data[i] > list_of_data[i + 1]:
                 # swap
-                list_of_data[i], list_of_data[i + 1] = list_of_data[i + 1], list_of_data[i]
+                list_of_data[i], list_of_data[i + 1] =\
+                    list_of_data[i + 1], list_of_data[i]
                 swap = True
         iterations += 1
     print(f"{iterations=}")
@@ -86,9 +88,11 @@ def smart_bubble_sort(list_of_data: list):
 
 @measure_time
 def quick_sort(list_of_data: list):
-    """ Быстрая сортировка (Чарьза Хоара). Выбираем один опорный элемент из списка.
+    """ Быстрая сортировка (Чарьза Хоара).
+    Выбираем один опорный элемент из списка.
     А всё остальное передвигаем так, чтобы этот элемент встал на своё место.
-    Все элементы меньше него перемещаются влево, а равные и большие элементы перемещаются вправо.
+    Все элементы меньше него перемещаются влево,
+    а равные и большие элементы перемещаются вправо.
     :param list_of_data: list
     :return: list
     """
