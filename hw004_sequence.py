@@ -38,9 +38,11 @@ def simple_iteration_sequence(data: list):
             for j in range(i + 1, len(data)):
                 # Если текущий элемент меньше элемента справа по j
                 # и меньше последнего в кэше, то добавляем его в список
+                min_value = min(data[j:])
+                print(f"{data[i]}<{data[j]} and {cash[-1]} < {data[j]}, {min_value=}")
                 if data[i] < data[j] and cash[-1] < data[j]:
                     cash.append(data[j])
-            # print(cash)
+            print(f"{cash=}")
             if len(result) < len(cash):
                 result = cash[:]
             cash.clear()
