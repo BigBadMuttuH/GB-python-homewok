@@ -20,12 +20,11 @@ def print_state(state):
 
 
 def get_winner(state, combinations):
-    """Определяем подбедителя"""
+    """Определяем победителя"""
     for (x, y, z) in combinations:
         if state[x] == state[y] \
                 and state[y] == state[z] \
                 and (state[x] == 'X' or state[x] == 'O'):
-
             return state[x]
     return ""
 
