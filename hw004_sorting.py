@@ -19,7 +19,7 @@ def measure_time(func, currently_evaluating=set()):
             finally:
                 currently_evaluating.remove(func)
             end_timer = timer()
-            print(f"Function {func.__name__}"
+            print(f"Function {func.__name__} "
                   f"took {end_timer - start_timer} for execution")
             return result
 
@@ -55,8 +55,9 @@ def bubble_sort(list_of_data: list):
     :return: list
     """
     for i in range(0, len(list_of_data) - 1):
+        min_index = i
         for j in range(0, len(list_of_data) - 1):
-            if list_of_data[j] > list_of_data[j + 1]:
+            if list_of_data[min_index] > list_of_data[j + 1]:
                 tmp = list_of_data[j]
                 list_of_data[j] = list_of_data[j + 1]
                 list_of_data[j + 1] = tmp
@@ -112,46 +113,54 @@ def quick_sort(list_of_data: list):
             else:
                 equal_elements_list.append(num)
         return quick_sort(small_elements_list) \
-               + equal_elements_list \
-               + quick_sort(big_elements_list)
+            + equal_elements_list \
+            + quick_sort(big_elements_list)
 
 
 @measure_time
 def quick_sort_opt(list_of_data):
-    """Оптимизированная быстрая сортировка"""
+    """Оптимизированная быстрая сортировка
+        на самом деле так себе оптимизация :(
+    """
     if len(list_of_data) <= 1:
         return list_of_data
     else:
         support_element = random.choice(list_of_data)
 
     small_elements_list = [n for n in list_of_data if n < support_element]
-    equal_elements_list = [support_element] * list_of_data.count(support_element)
+    equal_elements_list = [support_element] \
+        * list_of_data.count(support_element)
     big_elements_list = [n for n in list_of_data if n > support_element]
 
     return quick_sort_opt(small_elements_list) \
-           + equal_elements_list \
-           + quick_sort_opt(big_elements_list)
+        + equal_elements_list \
+        + quick_sort_opt(big_elements_list)
 
 
 # Создать и заполнить файл случайными целыми значениями.
 save_to_file(list_of_data=[randint(-100, 100) for _ in range(1, 20_000)])
 data = load_from_file(list_of_data=[])
 # Выполнить сортировку содержимого файла по возрастанию.
-print(f"Сортировка пузырьком")
-print(data)
-print(bubble_sort(data))
+print("Сортировка пузырьком")
+# print(data)
+# print(bubble_sort(data))
+bubble_sort(data)
 
-print(f"\nСортировка пузырьком с проверкой замены значений и подсчетом итераций")
+print("\nСортировка пузырьком \
+с проверкой замены значений и подсчетом итераций")
 data = load_from_file(list_of_data=[])
-print(data)
-print(smart_bubble_sort(data))
+# print(data)
+# print(smart_bubble_sort(data))
+smart_bubble_sort(data)
 
-print(f"\nБыстрая сортировка (Хоара)")
+print("\nБыстрая сортировка (Хоара)")
 data = load_from_file(list_of_data=[])
-print(data)
-print(quick_sort(data))
+# print(data)
+# print(quick_sort(data))
+quick_sort(data)
 
-print(f"\nОптимизированная быстрая сортировка")
+print("\nОптимизированная быстрая сортировка")
 data = load_from_file(list_of_data=[])
-print(data)
-print(quick_sort_opt(data))
+# print(data)
+# print(quick_sort_opt(data))
+quick_sort_opt(data)
