@@ -1,6 +1,5 @@
 import re
 
-
 # 1. Напишите программу, удаляющую из текста все слова содержащие "абв",
 # которое регистронезависимо.
 # Используйте знания с последней лекции.
@@ -19,7 +18,7 @@ def remove_abv(text):
                     if re.search(r"\b\w[^абв]\w+\b", t, re.IGNORECASE)])
 
 
-# print(remove_abv(text))
+print(remove_abv(text))
 
 
 # 3.
@@ -39,28 +38,36 @@ text = """
 def remove_words(text):
     result = text
     regex = (
-        r"[Нн]у[\s,.]",
-        r"[Вв] общем[\s.,]",
-        r"[,]короче[,.]",
-        r"[Кк]ороче говоря[,]",
-        r"[Кк]ороче[,.\s]",
-        r"э{2,}[\w\s,]",
-        r"кажется[,.]",
+        r"[Кк]ороче говоря",
+        r"[Яя]сен пень",
+        r"[,][\s][Кк]ороче[,]",
+        r"[Кк]ороче",
+        r"[Нн]у",
+        r"[Вв] общем",
+        r"э{2,}",
+        r"[Кк]ажется",
         r"[Кк]ак бы",
+        r"[Кк]стати",
         r"\…",
-        r"\.\.\.",
-        r"\s{2,}"
+        r"\s{2,}",
+        r"[,][,]",
+        r"[\s][,.]",
+        r"[\s][\s]"
     )
-    subst = ""
 
     for r in regex:
+        if r in ('[\s][,.]', '[\s][\s]'):
+            subst = " "
+        else:
+            subst = ""
         result = re.sub(r, subst, result, 0, re.MULTILINE | re.IGNORECASE)
     if result:
-        print(result)
+        result = result.strip().split(".")
+        result = ". ".join([str(t.strip()).capitalize() for t in result])
+        return result
     else:
-        print("Ваш текст полностью из слов 'паразитов'")
+        return "Ваш текст полностью из слов 'паразитов'"
 
 
 print(text, '\n')
-
-remove_words(text)
+print(remove_words(text))
