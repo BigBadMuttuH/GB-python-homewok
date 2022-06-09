@@ -55,9 +55,8 @@ def bubble_sort(list_of_data: list):
     :return: list
     """
     for i in range(0, len(list_of_data) - 1):
-        min_index = i
         for j in range(0, len(list_of_data) - 1):
-            if list_of_data[min_index] > list_of_data[j + 1]:
+            if list_of_data[i] > list_of_data[j]:
                 tmp = list_of_data[j]
                 list_of_data[j] = list_of_data[j + 1]
                 list_of_data[j + 1] = tmp
