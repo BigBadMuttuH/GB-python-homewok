@@ -1,5 +1,5 @@
 # игральная доска
-boad = [' ' for _ in range(9)]
+board = [' ' for _ in range(9)]
 winnig_combinations = [(0, 1, 2),  # X | X | X
                        (3, 4, 5),  # X | X | X
                        (6, 7, 8),  # X | X | X
@@ -29,20 +29,20 @@ def get_winner(state, combinations):
     return ""
 
 
-def play_game(boad):
+def play_game(board):
     """Сыграем в игру"""
     current_sign = 'X'
-    while get_winner(boad, winnig_combinations) == '':
+    while get_winner(board, winnig_combinations) == '':
         index = int(input(f"Где рисуем-'{current_sign}' (0-8)?"))
-        boad[index] = current_sign
+        board[index] = current_sign
 
-        print_state(boad)
+        print_state(board)
 
-        winner_sign = get_winner(boad, winnig_combinations)
+        winner_sign = get_winner(board, winnig_combinations)
         if winner_sign != '':
             print(f"Победитель: {winner_sign}")
 
         current_sign = 'X' if current_sign == 'O' else 'O'
 
 
-play_game(boad)
+play_game(board)

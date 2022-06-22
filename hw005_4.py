@@ -33,7 +33,7 @@ prog_lang = [
 
 
 def get_list_of_tuples(data):
-    return list(zip([i for i in range(1, len(data))], data))
+    return list(zip([i for i in range(1, len(data) + 1)], data))
 
 
 def get_sums(data, result=[]):

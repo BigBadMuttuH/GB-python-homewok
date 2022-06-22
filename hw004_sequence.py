@@ -38,11 +38,11 @@ def simple_iteration_sequence(data: list):
             for j in range(i + 1, len(data)):
                 # Если текущий элемент меньше элемента справа по j
                 # и меньше последнего в кэше, то добавляем его в список
-                min_value = min(data[j:])
-                print(f"{data[i]}<{data[j]} and {cash[-1]} < {data[j]}, {min_value=}")
+                # min_value = min(data[j:])
+                # print(f"{data[i]}<{data[j]} and {cash[-1]} < {data[j]}, {min_value=}")
                 if data[i] < data[j] and cash[-1] < data[j]:
                     cash.append(data[j])
-            print(f"{cash=}")
+            # print(f"{cash=}")
             if len(result) < len(cash):
                 result = cash[:]
             cash.clear()
@@ -108,7 +108,7 @@ def subsequence(seq):
 # описывающие возрастающую последовательность
 # и содержащие максимальное количество элементов.
 # Дан список чисел.
-list_of_data = [randint(-9, 9) for _ in range(0, 10)]
+list_of_data = [randint(-10, 10) for _ in range(0, 10)]
 print(list_of_data)
 print(f"Наибольшая последовательность чисел:\n"
       f"{simple_iteration_sequence(list_of_data)}")
