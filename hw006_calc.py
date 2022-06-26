@@ -8,7 +8,8 @@
 
 # text = '2+2*5-8/2+3*1.5'
 # text = '1+2*3'
-text = '1+3*4/2*9+10-2*2'
+# text = '1+3*4/2*9+10-2*2-1/0'
+
 
 def parsing_elements(text: str) -> list:
     """
@@ -50,7 +51,11 @@ def calculate(nlist: list):
                     nlist[i] = nlist[i - 1] * nlist[i + 1]
                     i, size = delete_elements(i, nlist, size)
                 elif nlist[i] == '/':
-                    nlist[i] = nlist[i - 1] / nlist[i + 1]
+                    try:
+                        nlist[i] = nlist[i - 1] / nlist[i + 1]
+                    except ZeroDivisionError:
+                        print('нельзя делить на ноль')
+                        exit()
                     i, size = delete_elements(i, nlist, size)
             i += 1
         i = 1
@@ -68,6 +73,6 @@ def calculate(nlist: list):
     return nlist[0]
 
 
-print(text)
+text = input("выражение без скобок: ")
 nums = parsing_elements(text)
 print(calculate(nums))
